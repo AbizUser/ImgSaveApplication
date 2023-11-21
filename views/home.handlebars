@@ -6,6 +6,9 @@
     <input type="submit" />
 </form>
 <div>
+    {{#each rows}}
     <p>下に保存された画像が出力されます。</p>
-    <img src="dentsu_home2_202302.jpg" alt="">
+    <img src="" alt="">
+    <p>{{this.imageName}}</p>
+    {{/each}}
 </div>
