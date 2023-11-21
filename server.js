@@ -18,7 +18,14 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 
-
+// connection pool …DBへ常に接続しておくための記述
+const pool =  mysql.createPool({
+    connectionLimit:,
+    host:"",
+    user:"",
+    password:"",
+    database:"",
+});
 
 
 
@@ -62,7 +69,7 @@ app.post("/",(req,res)=>{
     if(err) throw err;
 
     // MySQLに画像ファイルの名前を追加取得して保存する
-    connection.query(`INSERT INTO images values ("1","${imageFile.name}")` ,
+    connection.query(`INSERT INTO images values ("","${imageFile.name}")` ,
      (err , rows)=>{
         connection.release();
 
